@@ -62,7 +62,7 @@ app.use((req, res, next) => {
 connectDB();
 
 // API Routes (backend logic)
-app.use("/api/customers/dangcap", require("./routes/customers"));
+app.use("/api/customers", require("./routes/customers"));
 app.use("/api/auth", require("./routes/auth.routes"));
 
 // Start Server
