@@ -45,3 +45,21 @@ exports.getAllCustomers = async (req, res, next) => {
     next(err);
   }
 };
+
+exports.deleteCustomer = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      return res.status(400).json({ ok: false, error: "MISSING_ID" });
+    }
+
+    const deleted = await Customer.findByIdAndDelete(id);
+    if (!deleted) {
+      return res.status(404).json({ ok: false, error: "CUSTOMER_NOT_FOUND" });
+    }
+
+    res.json({ ok: true, message: "Customer deleted", data: deleted });
+  } catch (err) {
+    next(err);
+  }
+};

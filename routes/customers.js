@@ -5,5 +5,5 @@ const verifyToken = require("../middleware/auth.middleware"); // <- phải khớ
 
 router.post("/", customerController.createCustomer);
 router.get("/", verifyToken, customerController.getAllCustomers);
-
+router.delete("/:id", verifyToken, customerController.deleteCustomer);
 module.exports = router;
