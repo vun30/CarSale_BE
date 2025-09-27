@@ -19,6 +19,7 @@ const defaultAllowedOrigins = [
   "https://car-sale-inf-be.vercel.app",
   "https://www.hyundaigialaiofficial.com.vn",
   "hyundaigialaiofficial.com.vn",
+  "https://hyundaigialaiofficial.com.vn"
 ];
 
 const envAllowedOrigins = process.env.CORS_ALLOWED_ORIGINS
